@@ -1,0 +1,10 @@
+
+
+<ul>
+  {{#each appointment in model itemController="appointment"}}
+  <li>
+    {{link-to appointment.model.url 'show' appointment}}
+    <button {{action 'destroy'}}>X</button>
+  </li>
+  {{/each}}
+</ul>

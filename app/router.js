@@ -6,6 +6,7 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('index', { path: '/' });
   this.route('appointment', { path: '/appointment' });
   this.route('appointments', function() {
     this.route('form');

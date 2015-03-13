@@ -1,6 +1,6 @@
-import DS from 'ember-data';
+import Ember from 'ember';
 
-export default DS.Model.extend({
+export default Ember.Object.extend({
   init: function(){
       this._map = Ember.Object.create();
   },
@@ -27,6 +27,21 @@ export default DS.Model.extend({
         typeArray.addObject(v);
     }
   },
+
+  remove: function(type, record) {
+    var typeArray = this._getType(type);
+    if(typeof(record) !== "object") {
+      // assum it's an id
+      record = typeArray.findBy('__jsim_meta_id', record);
+    }
+    typeArray.removeObject(record);
+  },
+
+  clear: function(type) {
+    var typeArray = this._getType(type);
+    typeArray.splice(0, typeArray.length);
+  },
+
   _getType: function(type) {
     var typeArray = this._map.get(type);
     if(!typeArray){

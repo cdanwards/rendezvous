@@ -1,7 +1,7 @@
 
-
 <div class="day-container">
   <h1 class="main-header">Rendez-Vous</h1>
+  <h2 class="appointment-header">Appointment Times</h2>
   <div class="list-container">
 
     <ul>
@@ -17,5 +17,8 @@
     </ul>
 
   </div>
-  <h2 class="date-footer">Date</h2>
+  <h2 class="date-footer" {{moment date}}></h2>
 </div>
+
+
+{{outlet}}

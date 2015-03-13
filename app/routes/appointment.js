@@ -1,7 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  function () {
-  console.log("this is working");
- }
+  actions: {
+    createBookmark: function(){
+      this.modelFor('new').save().then(function() {
+        this.transitionTo('index');
+      }.bind(this));
+    }
+  }
 });
