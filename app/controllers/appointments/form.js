@@ -1,13 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  model: function() {
-    return{};
-  },
+  model: {},
 
   actions: {
     save: function() {
-      this.get('model').save();
+      this.store.save('appointment', this.get('model'));
+      // console.log(this.get('model'));
       }
     }
 });

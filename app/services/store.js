@@ -4,7 +4,7 @@ import IdentityMap from '../models/identity-map';
 var identityMap = IdentityMap.create();
 
 export default Ember.Service.extend({
-  find: function(name,id){
+  find: function(name, id){
 
     var cached = identityMap.get(name,id);
     if(cached) { return Ember.RSVP.resolve(cached); }
@@ -38,26 +38,25 @@ export default Ember.Service.extend({
   },
 
   save: function(name, record) {
-    var adapter = this.container.lookup('adapter:' + type);
-    var serialized = record.toJSON();
+    var adapter = this.container.lookup('adapter:' + name);
 
-    return adapter.save(type, serialized).then(function(recordData) {
-      var record = this.createRecord(type, recordData);
-      identityMap.set(type, record.id, record);
-      return identityMap.get(type, record.id);
+    return adapter.save(name, record).then(function(recordData) {
+      var record = this.createRecord(name, recordData);
+      identityMap.set(name, record.id, record);
+      return identityMap.get(name, record.id);
     }.bind(this));
   },
 
-  push: function(type, record) {
-    return identityMap.set(type, record.id, record);
+  push: function(name, record) {
+    return identityMap.set(name, record.id, record);
   },
 
-  createRecord: function(type, properties){
-    var klass = this.modelFor(type);
+  createRecord: function(name, properties){
+    var klass = this.modelFor(name);
     return klass.create(properties);
   },
 
-  modelFor: function(type) {
-    return this.container.lookupFactory('model' + type);
+  modelFor: function(name) {
+    return this.container.lookupFactory('model' + name);
   }
 });

@@ -14,7 +14,7 @@ export default Ember.Object.extend({
   },
 
   findAll: function(name) {
-    /* jshint unuse: false */
+    /* jshint unused: false */
     return ajax("https://api.parse.com/1/classes/appointment").then(function(response){
       return response.results.map(function(appointment) {
         appointment.id = appointment.objectId;
@@ -32,6 +32,7 @@ export default Ember.Object.extend({
   },
 
   save: function(name, record) {
+    console.log(JSON.stringify(record));
     if(record.id) {
       return ajax({
         url: "https://api.parse.com/1/classes/appointment/" + record.id,
@@ -43,7 +44,8 @@ export default Ember.Object.extend({
         return response;
       });
     } else {
-      return ajas({
+      return ajax({
+
         url: "https://api.parse.com/1/classes/appointment",
         type: "POST",
         data: JSON.stringify(record)

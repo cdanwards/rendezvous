@@ -8,8 +8,18 @@ module.exports = function(environment) {
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
-        
+
       }
+    },
+
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self'",
+      'font-src': "'self'",
+      'connect-src': "'self' https://api.parse.com",
+      'img-src': "'self'",
+      'style-src': "'self'",
+      'media-src': "'self'"
     },
 
     APP: {
