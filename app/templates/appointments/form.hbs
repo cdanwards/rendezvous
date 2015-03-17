@@ -1,19 +1,20 @@
 
 <div class="form-container">
-  <form {{action "createAppointment" on="submit"}}>
-    <p class="form-description">First Name:</p>
-    {{input type="text" class="create-first-name" placeholder="First Name" value="firstName"}}
-    <p class="form-description">Last Name:</p>
-    {{input type="text" class="create-last-name" placeholder="Last Name" value="lastName"}}
-    <p class="form-description">Email:</p>
-    {{input type="text" class="create-email" placeholder="Email" value="email"}}
-    <p class="form-description">Reason For Appointment:</p>
-    {{textarea type="text" class="create-reason" placeholder="Reason for appointment" value="reason"}}
-    <button {{action "createAppointment"}}>Schedule Appointment</button>
+  <form {{action "save" on="submit"}}>
+    <div class="input-field">
+      {{input type="text" placeholder="First Name" value=model.firstName}}
+      {{input type="text" placeholder="Last Name" value=model.lastName}}
+      {{input type="text" placeholder="email" value=model.email}}
+      {{textarea type="text" placeholder="Reason for appointment" value=model.reason}}
+    </div>
+    <div class="paragraph-field">
+      <p class="form-description">First Name:</p>
+      <p class="form-description">Last Name:</p>
+      <p class="form-description">Email:</p>
+      <p class="form-description">Reason For Appointment:</p>
+    </div>
+    <button class="form-button" {{action "save"}}>Schedule Appointment</button>
   </form>
-
-
-
 
 </div>
 

@@ -38,10 +38,26 @@ export default Ember.Service.extend({
   },
 
   save: function(name, record) {
-    var adapter = this.container.lookup('adapter:' + name);
-    return adapter.save(name, record).then(function() {
-      identityMap.set(name, record.id, record);
-      return record;
-    });
+    var adapter = this.container.lookup('adapter:' + type);
+    var serialized = record.toJSON();
+
+    return adapter.save(type, serialized).then(function(recordData) {
+      var record = this.createRecord(type, recordData);
+      identityMap.set(type, record.id, record);
+      return identityMap.get(type, record.id);
+    }.bind(this));
+  },
+
+  push: function(type, record) {
+    return identityMap.set(type, record.id, record);
+  },
+
+  createRecord: function(type, properties){
+    var klass = this.modelFor(type);
+    return klass.create(properties);
+  },
+
+  modelFor: function(type) {
+    return this.container.lookupFactory('model' + type);
   }
 });

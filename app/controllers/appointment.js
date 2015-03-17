@@ -6,10 +6,10 @@ export default Ember.Controller.extend({
   },
 
   actions: {
-    createAppointment: function() {
+    save: function() {
       var self = this;
       this.store.save('appointment', this.modelFor('new')).then(function(){
-        self.transitionTo('index')
+        self.transitionTo('index');
       });
     }
   }

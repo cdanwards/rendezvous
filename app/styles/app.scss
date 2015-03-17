@@ -1,0 +1,65 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-color: #252525;
+}
+
+
+/* Color Vairables */
+
+$monte-carlo: #7BCCC4;
+$gossamer: #009788;
+
+$primary-color: $gossamer;
+$secondary-color: $monte-carlo;
+
+
+
+/* Header */
+
+.application-container {
+  max-width: 100%;
+  max-height: 5%;
+  background-color: $primary-color;
+
+  .main-header {
+    text-align: center;
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+.form-container {
+  position: relative;
+  padding: 20px;
+  background-color: $secondary-color;
+  max-width: 50%;
+  max-height: 40%;
+  .paragraph-field {
+    position: relative;
+    p {
+      margin: 5px 0;
+    }
+  }
+  .input-field {
+    input, textarea {
+      display: block;
+      width: 200px;
+      margin: 5px 0;
+    }
+    position: absolute;
+    right: 0;
+    top: 5;
+    padding-right: 10px
+  }
+  margin: 0 auto;
+  margin-top: 30px;
+  .form-button {
+    margin: 0 auto;
+    padding: 3px;
+  }
+}
