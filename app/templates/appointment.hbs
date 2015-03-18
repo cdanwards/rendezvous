@@ -1,23 +1,21 @@
+{{outlet}}
 
 <div class="day-container">
   <h2 class="appointment-header">Appointment Times</h2>
   <div class="list-container">
 
     <ul>
-      <li class="app-time">9:00am</li>
-      <li class="app-time">10:00am</li>
-      <li class="app-time">11:00am</li>
-      <li class="app-time">12:00pm</li>
-      <li class="app-time">1:00pm</li>
-      <li class="app-time">2:00pm</li>
-      <li class="app-time">3:00pm</li>
-      <li class="app-time">4:00pm</li>
-      <li class="app-time">5:00pm</li>
+      <li class="app-time">{{#link-to 'appointments.form'}}9:00am{{/link-to}}</li>
+      <li class="app-time">{{#link-to 'appointments.form'}}10:00am{{/link-to}}</li>
+      <li class="app-time">{{#link-to 'appointments.form'}}11:00am{{/link-to}}</li>
+      <li class="app-time">{{#link-to 'appointments.form'}}12:00pm{{/link-to}}</li>
+      <li class="app-time">{{#link-to 'appointments.form'}}1:00pm{{/link-to}}</li>
+      <li class="app-time">{{#link-to 'appointments.form'}}2:00pm{{/link-to}}</li>
+      <li class="app-time">{{#link-to 'appointments.form'}}3:00pm{{/link-to}}</li>
+      <li class="app-time">{{#link-to 'appointments.form'}}4:00pm{{/link-to}}</li>
+      <li class="app-time">{{#link-to 'appointments.form'}}5:00pm{{/link-to}}</li>
     </ul>
 
   </div>
-  <h2 class="date-footer" {{moment date}}></h2>
+  <h4 class="date-footer">{{moment date}}</h4>
 </div>
-
-
-{{outlet}}

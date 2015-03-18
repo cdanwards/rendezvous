@@ -24,12 +24,12 @@ export default Ember.Object.extend({
     });
   },
 
-  destroy: function(name, record) {
-    return ajax({
-      url: "https://api.parse.com/1/classes/appointment/" + record.id,
-      type: "DELETE"
-    });
-  },
+  // destroy: function(name, record) {
+  //   return ajax({
+  //     url: "https://api.parse.com/1/classes/appointment/" + record.id,
+  //     type: "DELETE"
+  //   });
+  // },
 
   save: function(name, record) {
     console.log(JSON.stringify(record));

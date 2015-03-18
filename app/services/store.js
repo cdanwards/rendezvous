@@ -30,12 +30,12 @@ export default Ember.Service.extend({
 
   },
 
-  destroy: function(name, record) {
-    var adapter = this.container.lookup('adapter:' + name);
-    return adapter.destroy(name, record).then(function() {
-      identityMap.remove(name, record);
-    });
-  },
+  // destroy: function(name, record) {
+  //   var adapter = this.container.lookup('adapter:' + name);
+  //   return adapter.destroy(name, record).then(function() {
+  //     identityMap.remove(name, record);
+  //   });
+  // },
 
   save: function(name, record) {
     var adapter = this.container.lookup('adapter:' + name);

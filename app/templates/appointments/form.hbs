@@ -13,8 +13,10 @@
       <p class="form-description">Email:</p>
       <p class="form-description">Reason For Appointment:</p>
     </div>
+    {{#link-to 'appointments.thanks'}}
     <button class="form-button" {{action "save"}}>Schedule Appointment</button>
-    
+    {{/link-to}}
+
   </form>
 
 </div>

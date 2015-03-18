@@ -12,9 +12,11 @@
 
 $monte-carlo: #7BCCC4;
 $gossamer: #009788;
+$text-black: #202020;
 
 $primary-color: $gossamer;
 $secondary-color: $monte-carlo;
+$black-text: $text-black;
 
 
 
@@ -33,6 +35,37 @@ $secondary-color: $monte-carlo;
     font-weight: 300;
   }
 }
+
+
+.day-container {
+  max-width: 40%;
+  max-height: 70%;
+  background-color: $secondary-color;
+  margin: 0 auto;
+  margin-top: 30px;
+  list-style: none;
+  padding: 20px;
+
+  .appointment-header {
+    text-align: center;
+  }
+
+  .list-container {
+    ul {
+      list-style: none;
+      padding: 10px 0;
+    }
+    .app-time {
+      padding: 5px;
+      text-align: center;
+      border: 1px white solid;
+    }
+  }
+  .date-footer {
+    text-align: center;
+  }
+}
+
 
 .form-container {
   position: relative;
@@ -62,5 +95,19 @@ $secondary-color: $monte-carlo;
   .form-button {
     margin: 0 auto;
     padding: 3px;
+  }
+}
+
+.thanks-container {
+  width: 50%;
+  height: 200px;
+  background-color: $secondary-color;
+  margin: 0 auto;
+  margin-top: 50px;
+  .thanks-banner {
+    text-align: center;
+    padding-top: 80px;
+    font-weight: 300;
+    color: $black-text;
   }
 }
