@@ -54,5 +54,11 @@ export default Ember.Object.extend({
         return record;
       });
     }
+  },
+
+  appointment: function(params) {
+    return ajax("https://api.parse.com/1/functions/appointment", {
+      type: "POST"
+    });
   }
 });

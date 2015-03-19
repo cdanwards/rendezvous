@@ -7,6 +7,6 @@ export default Ember.Controller.extend({
     save: function() {
       this.store.save('appointment', this.get('model'));
       // console.log(this.get('model'));
-      }
     }
+  }
 });
