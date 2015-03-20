@@ -44,9 +44,9 @@ function sendTemplate(templateName, params) {
 Parse.Cloud.define('appointment', function(request, response) {
   sendTemplate('mandrill-app-test-2', {
     subject: 'YO',
-    firstName: "Dan",
-    lastName: "Edwards",
-    toEmail: "cdaniel.edwards@gmail.com"
+    firstName: request.object.get("firstName"),
+    lastName: request.object.get("lastName"),
+    toEmail: request.object.get("email")
   }).then(function(){
     response.success();
   }, function(error){

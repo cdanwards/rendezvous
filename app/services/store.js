@@ -56,7 +56,11 @@ export default Ember.Service.extend({
     return klass.create(properties);
   },
 
-  modelFor: function(name) {
-    return this.container.lookupFactory('model' + name);
-  }
+  modelFor: function(type) {
+    var factory = this.container.lookupFactory('model:' + type);
+    if (!factory) {
+      throw new Ember.Error("No model was found for '" + type + "'");
+     }
+     return factory;
+   }
 });

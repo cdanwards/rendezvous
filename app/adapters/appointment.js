@@ -31,34 +31,25 @@ export default Ember.Object.extend({
   //   });
   // },
 
-  save: function(name, record) {
-    console.log(JSON.stringify(record));
-    if(record.id) {
-      return ajax({
-        url: "https://api.parse.com/1/classes/appointment/" + record.id,
-        type: "PUT",
-        data: JSON.stringify(record)
-      }).then(function(response) {
-        response.id = response.objectId;
-        delete response.objectId;
-        return response;
-      });
-    } else {
-      return ajax({
-
-        url: "https://api.parse.com/1/classes/appointment",
-        type: "POST",
-        data: JSON.stringify(record)
-      }).then(function(response) {
-        record.updatedAt = response.updatedAt;
-        return record;
-      });
-    }
-  },
-
   appointment: function(params) {
+    console.log('this works');
     return ajax("https://api.parse.com/1/functions/appointment", {
       type: "POST"
     });
+  },
+
+  save: function(name, record) {
+    console.log('start');
+    // console.log(JSON.stringify(record));
+    return ajax({
+      url: "https://api.parse.com/1/classes/appointment",
+      type: "POST",
+      data: JSON.stringify(record)
+    }).then(function(response) {
+      record.updatedAt = response.updatedAt;
+      return record;
+    }).then(function(response) {
+      this.appointment();
+    }.bind(this));
   }
 });

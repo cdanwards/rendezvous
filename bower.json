@@ -11,6 +11,14 @@
     "ember-qunit": "0.2.8",
     "ember-qunit-notifications": "0.0.7",
     "qunit": "~1.17.1",
-    "ember-cli-moment-shim": "~0.0.3"
+    "ember-cli-moment-shim": "~0.0.3",
+    "bootstrap-datepicker": "~1.4.0",
+    "fontawesome": "~4.3.0",
+    "highcharts": "~4.1.4",
+    "moment": "~2.9.0",
+    "moment-timezone": "~0.3.1",
+    "select2": "~3.5.2",
+    "typeahead.js": "~0.10.5",
+    "sl-bootstrap": "softlayer/sl-bootstrap#~1.1.0"
   }
 }

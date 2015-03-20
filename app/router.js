@@ -12,6 +12,7 @@ Router.map(function() {
     this.route('form');
     this.route('thanks');
   });
+  this.route('calendar');
 });
 
 export default Router;
