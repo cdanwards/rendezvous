@@ -47,12 +47,18 @@ $black-text: $text-black;
   .week-header {
     max-width: 90%;
     max-height: 10%;
-
+    .week-header-title {
+      text-align: center;
+      padding: 5px;
+    }
   }
   .week-container {
 
     .day-container {
       display: inline-block;
+      max-width: 10%;
+      margin: 0 auto;
+      margin-left: 5px;
     }
   }
 }

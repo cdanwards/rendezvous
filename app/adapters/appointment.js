@@ -34,7 +34,8 @@ export default Ember.Object.extend({
   appointment: function(params) {
     console.log('this works');
     return ajax("https://api.parse.com/1/functions/appointment", {
-      type: "POST"
+      type: "POST",
+      data: JSON.stringify(params)
     });
   },
 
@@ -49,7 +50,7 @@ export default Ember.Object.extend({
       record.updatedAt = response.updatedAt;
       return record;
     }).then(function(response) {
-      this.appointment();
+      this.appointment(response);
     }.bind(this));
   }
 });
