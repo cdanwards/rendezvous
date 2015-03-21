@@ -1,7 +1,8 @@
 import Ember from 'ember';
-import ajax from 'ic-ajax';
 
 export default Ember.Route.extend({
+  model: function(params) { console.log(params.time);},
+
   actions: {
     save: function(){
       this.modelFor('new').save().then(function() {

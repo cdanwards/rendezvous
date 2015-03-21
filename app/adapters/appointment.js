@@ -31,13 +31,14 @@ export default Ember.Object.extend({
   //   });
   // },
 
-  appointment: function(params) {
-    console.log('this works');
-    return ajax("https://api.parse.com/1/functions/appointment", {
-      type: "POST",
-      data: JSON.stringify(params)
-    });
-  },
+  // appointment: function(params) {
+  //   console.log('this works');
+  //   return ajax("https://api.parse.com/1/functions/appointment", {
+  //     type: "POST",
+  //     contentType: 'application/json',
+  //     data: JSON.stringify(params)
+  //   });
+  // },
 
   save: function(name, record) {
     console.log('start');
@@ -49,8 +50,8 @@ export default Ember.Object.extend({
     }).then(function(response) {
       record.updatedAt = response.updatedAt;
       return record;
-    }).then(function(response) {
-      this.appointment(response);
+    // }).then(function(response) {
+    //   this.appointment(response);
     }.bind(this));
   }
 });

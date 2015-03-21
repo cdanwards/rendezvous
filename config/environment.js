@@ -12,9 +12,19 @@ module.exports = function(environment) {
       }
     },
 
+    parseKeys: {
+      applicationId: 'A5NCb7Pu9F3z1maktkM3s2BltwN7zBwb4NBx1K0e',
+      restApi: 'XFzAuEJD6L2h1SrmDsslQesOuGuZxGmctYNNJOtp'
+    },
+
+    'simple-auth': {
+      authorizer: 'authorizer:parse',
+      crossOriginWhitelist:['https://api.parse.com'],
+      routeAfterAuthentication: 'calendar'
+    },
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self'",
+      'script-src': "'self' fonts.googleapis.com",
       'font-src': "'self'",
       'connect-src': "'self' https://api.parse.com",
       'img-src': "'self'",

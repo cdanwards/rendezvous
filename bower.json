@@ -19,6 +19,7 @@
     "moment-timezone": "~0.3.1",
     "select2": "~3.5.2",
     "typeahead.js": "~0.10.5",
-    "sl-bootstrap": "softlayer/sl-bootstrap#~1.1.0"
+    "sl-bootstrap": "softlayer/sl-bootstrap#~1.1.0",
+    "ember-simple-auth": "0.7.3"
   }
 }

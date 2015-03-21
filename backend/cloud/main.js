@@ -6,7 +6,7 @@ function sendTemplate(templateName, params) {
   Mandrill.initialize('2TD2OD-Z5Bx6fCUFI46bTg');
   Mandrill.sendTemplate({
     template_name: templateName,
-    template_content: [
+    global_merge_vars: [
       {
         name: "SUBJECT",
         content: params.subject
@@ -18,8 +18,13 @@ function sendTemplate(templateName, params) {
       {
         name: "LName",
         content: params.lastName
-      }
+      },
+      {
+        name: "REASON",
+        content: params.reason
+      },
     ],
+    template_content: [],
     message: {
       from_email: "rendezvousemailapp@gmail.com",
       to: [{
@@ -41,15 +46,15 @@ function sendTemplate(templateName, params) {
   return promise;
 }
 
-Parse.Cloud.define('appointment', function(request, response) {
-  sendTemplate('mandrill-app-test-2', {
-    subject: 'YO',
-    firstName: request.firstName,
-    lastName: request.lastName,
-    toEmail: "cdaniel.edwards@gmail.com"
-  }).then(function(){
-    response.success();
-  }, function(error){
-    response.error(error);
-  });
+Parse.Cloud.afterSave('appointment', function(request, response) {
+  // only if appointment is new
+  if(request.object.existed() === false) {
+    sendTemplate('mandrill-app-test-2', {
+      subject: '',
+      firstName: request.object.get('firstName'),
+      lastName: request.object.get('lastName'),
+      toEmail: request.object.get('email'),
+      reason: request.object.get('reason')
+    });
+  }
 });

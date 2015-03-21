@@ -9,10 +9,11 @@ Router.map(function() {
   this.route('index');
   this.route('appointment');
   this.route('appointments', function() {
-    this.route('form');
+    this.route('create', { path: '/create/:time_id' });
     this.route('thanks');
   });
   this.route('calendar');
+  this.route('login');
 });
 
 export default Router;

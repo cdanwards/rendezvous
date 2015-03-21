@@ -7,6 +7,9 @@ export default Ember.Object.extend({
 
   save: function(){
     return this.store.save('appointment', this);
+    // .then(function(params) {
+    //   return this.store.set('appointment', params.time);
+    // });
   }
 
 });
