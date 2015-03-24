@@ -43,6 +43,16 @@ export default Ember.Object.extend({
   save: function(name, record) {
     console.log('start');
     // console.log(JSON.stringify(record));
+    if (record.id) {
+      return ajax({
+        url: "https://api.parse.com/1/classes/Request" + record.id,
+        type: "PUT",
+        data: JSON.stringify(record.toJSON())
+      }).then(function(response) {
+        record.updatedAt = response.updatedAt;
+        return record;
+      });
+    } else {
     return ajax({
       url: "https://api.parse.com/1/classes/appointment",
       type: "POST",
@@ -50,8 +60,7 @@ export default Ember.Object.extend({
     }).then(function(response) {
       record.updatedAt = response.updatedAt;
       return record;
-    // }).then(function(response) {
-    //   this.appointment(response);
     }.bind(this));
+    }
   }
 });

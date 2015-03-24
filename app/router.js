@@ -15,6 +15,7 @@ Router.map(function() {
   this.route('calendar');
   this.route('new');
   this.route('login');
+  this.route('edit');
 });
 
 export default Router;

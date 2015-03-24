@@ -1,10 +1,28 @@
+{{outlet}}
 
+{{#link-to 'edit'}}<div class="prof-edit-button">Edit</div>{{/link-to}}
+<div class="index-info">
+
+  <div class="index-headline">
+  <h2>Contact Info</h2>
+  </div>
 
 <ul>
-  {{#each appointment in model itemController="appointment"}}
-  <li>
-    {{link-to appointment.model.url 'index' appointment}}
-    <button {{action 'destroy'}}>X</button>
-  </li>
-  {{/each}}
+  <li>{{session.currentUser.firstName}}</li>
+  <li>{{session.currentUser.lastName}}</li>
+  <li>{{session.currentUser.email}}</li>
 </ul>
+
+<div class="appointment-headline">
+<h2>Appointments</h2>
+</div>
+{{#each appointment in model}}
+<ul>
+  <li>{{appointment.firstName}}</li>
+  <li>{{appointment.lastName}}</li>
+  <li>{{appointment.email}}</li>
+  <li>{{appointment.reason}}</li>
+</ul>
+
+{{/each}}
+</div>

@@ -1,0 +1,18 @@
+{{outlet}}
+
+<form {{action 'saveIndex' on="submit"}}>
+  <fieldset>
+
+    <div class="reg-form">
+
+      {{input type="text" name="email" placeholder="Email Address" value=session.currentUser.email required=true}}
+      {{input type="text" name="firstName" placeholder="First Name" value=session.currentUser.firstName required=true}}
+      {{input type="text" name="lastName" placeholder="Last Name" value=session.currentUser.lastName required=true}}
+
+
+    <div class="reg-button">
+      <button class="reg-button">Submit</button>
+    </div>
+  </div>
+  </fieldset>
+</form>
