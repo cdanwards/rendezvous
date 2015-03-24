@@ -13,6 +13,7 @@ Router.map(function() {
     this.route('thanks');
   });
   this.route('calendar');
+  this.route('new');
   this.route('login');
 });
 

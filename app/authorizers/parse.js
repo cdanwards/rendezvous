@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import Base from 'simple-auth/authorizers/base';
-import ENV from 'mowr/config/environment';
+import ENV from 'rendezvous/config/environment';
 
 export default Base.extend({
   authorize: function(jqXHR) {

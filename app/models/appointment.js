@@ -1,15 +1,4 @@
-import Ember from 'ember';
+import Model from 'ember-magic-man/model';
 
-export default Ember.Object.extend({
-  destroy: function(){
-    return this.store.destroy('appointment', this);
-  },
-
-  save: function(){
-    return this.store.save('appointment', this);
-    // .then(function(params) {
-    //   return this.store.set('appointment', params.time);
-    // });
-  }
-
+export default Model.extend({
 });

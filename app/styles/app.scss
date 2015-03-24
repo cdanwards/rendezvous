@@ -143,3 +143,20 @@ $black-text: $text-black;
     color: $black-text;
   }
 }
+
+/* Login View */
+
+.login-form {
+  margin: 0 auto;
+  width: 40%;
+  height: 300px;
+  background-color: $secondary-color;
+  margin-top: 50px;
+  input, button {
+    display: block;
+    width: 70%;
+    height: 20%;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+}
