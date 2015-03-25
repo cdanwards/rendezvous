@@ -20,7 +20,7 @@ module.exports = function(environment) {
     'simple-auth': {
       authorizer: 'authorizer:parse',
       crossOriginWhitelist:['https://api.parse.com'],
-      routeAfterAuthentication: 'calendar'
+      routeAfterAuthentication: 'calendar',
     },
     contentSecurityPolicy: {
       'default-src': "'none'",

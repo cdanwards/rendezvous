@@ -4,6 +4,8 @@ import ajax from 'ic-ajax';
 
 export function initialize(container, application) {
   application.inject('authenticator:parse-email', 'store', 'store:main');
+  application.inject('adapter', 'session', 'simple-auth-session:main');
+
   Session.reopen({
     setCurrentUser: function() {
       var token = this.get('sessionToken');

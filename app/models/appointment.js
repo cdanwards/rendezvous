@@ -1,4 +1,3 @@
-import Ember from 'ember';
 import Model from 'ember-magic-man/model';
 
 export default Model.extend({
@@ -12,7 +11,6 @@ export default Model.extend({
         objectId: creatorId
       });
     }
-
     return data;
   }
 });

@@ -1,14 +1,17 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model: function(params) {
-    return Ember.$.getJSON('/appointments/'+params.time_id);
-  },
+  // model: 
+  // // function() {
+  // //   return this.store.createRecord('appointment', {
+  // //     createdBy: this.get('session.currentUser')
+  // //   });
+  // },
 
   actions: {
     save: function(){
       this.modelFor('new').save().then(function() {
-        this.transitionTo('index');
+        this.transitionTo('appointments');
       }.bind(this));
     }
   }

@@ -6,10 +6,9 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('index');
   this.route('appointment');
   this.route('appointments', function() {
-    this.route('create', { path: '/create/:time_id' });
+    this.route('create', { path: '/create/:date/:time' });
     this.route('thanks');
   });
   this.route('calendar');

@@ -16,10 +16,10 @@
 <div class="appointment-headline">
 <h2>Appointments</h2>
 </div>
-{{#each appointment in model}}
-<ul>
-  <li>{{appointment.firstName}}{{appointment.lastName}}{{appointment.email}}{{appointment.reason}}</li>
-</ul>
 
+<ul>
+{{#each appointment in model}}
+  <li>{{appointment.firstName}}{{appointment.lastName}}{{appointment.email}}{{appointment.reason}}</li>
 {{/each}}
+</ul>
 </div>

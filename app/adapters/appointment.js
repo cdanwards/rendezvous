@@ -16,15 +16,16 @@ export default Ember.Object.extend({
   findAll: function(name) {
     /* jshint unused: false */
     var currentUser = this.get('session.currentUser.id');
-    return ajax("https://api.parse.com/1/classes/appointment" + "?include=createdBy", {
+    return ajax("https://api.parse.com/1/classes/appointment", {
       data: {
-        where: {
+        include: "createdBy",
+        where: JSON.stringify({
           "createdBy": {
             "__type": "Pointer",
             "className": "_User",
             "objectId": currentUser
           }
-        }
+        })
       }
     }).then(function(response){
       return response.results.map(function(appointment) {
