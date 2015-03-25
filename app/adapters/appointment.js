@@ -15,7 +15,33 @@ export default Ember.Object.extend({
 
   findAll: function(name) {
     /* jshint unused: false */
-    return ajax("https://api.parse.com/1/classes/appointment").then(function(response){
+    var currentUser = this.get('session.currentUser.id');
+    return ajax("https://api.parse.com/1/classes/appointment" + "?include=createdBy", {
+      data: {
+        where: {
+          "createdBy": {
+            "__type": "Pointer",
+            "className": "_User",
+            "objectId": currentUser
+          }
+        }
+      }
+    }).then(function(response){
+      return response.results.map(function(appointment) {
+        appointment.id = appointment.objectId;
+        delete appointment.objectId;
+        return appointment;
+      });
+    });
+  },
+
+  findQuery: function(name, query) {
+    /* jshint unused: false */
+    return ajax("https://api.parse.com/1/classes/appointment", {
+      data: Ember.$.param({
+        where: JSON.stringify(query)
+      })
+    }).then(function(response){
       return response.results.map(function(appointment) {
         appointment.id = appointment.objectId;
         delete appointment.objectId;
@@ -45,7 +71,7 @@ export default Ember.Object.extend({
     // console.log(JSON.stringify(record));
     if (record.id) {
       return ajax({
-        url: "https://api.parse.com/1/classes/Request" + record.id,
+        url: "https://api.parse.com/1/classes/appointment" + record.id,
         type: "PUT",
         data: JSON.stringify(record.toJSON())
       }).then(function(response) {

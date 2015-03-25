@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
   actions: {
     save: function() {
       this.store.save('appointment', this.get('model'));
-      // console.log(this.get('model'));
+      // console.log(this.store.get(session.currentUser.lastName));
     }
   }
 });

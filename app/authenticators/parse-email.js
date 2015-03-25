@@ -39,5 +39,15 @@ export default Base.extend({
 
   invalidate: function() {
     return Ember.RSVP.resolve();
+  },
+
+  _setupHeaders: Ember.immediateObserver('sessionToken', function(){
+  var token = this.get('sessionToken');
+  Ember.$.ajaxSetup({
+  headers: {
+    'X-Parse-Session-Token': token
   }
+});
+})
+
 });

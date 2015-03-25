@@ -2,9 +2,25 @@
 
 <div class="calendar-container">
   <div class="week-header">
-    <h1 class="week-header-title">Week of 3/21/15</h1>
+    <p class="week-header-title">
+      {{#each date in dateRange}}
+        <p class="date-container">{{date}}</p>
+        <ul class="apps-container">
+          {{#link-to 'appointments.create' 900}}<li class="app-time">9:00am</li>{{/link-to}}
+          {{#link-to 'appointments.create' 1000}}<li class="app-time">10:00am</li>{{/link-to}}
+          {{#link-to 'appointments.create' 1100}}<li class="app-time">11:00am</li>{{/link-to}}
+          {{#link-to 'appointments.create' 1200}}<li class="app-time">12:00pm</li>{{/link-to}}
+          {{#link-to 'appointments.create' 1300}}<li class="app-time">1:00pm</li>{{/link-to}}
+          {{#link-to 'appointments.create' 1400}}<li class="app-time">2:00pm</li>{{/link-to}}
+          {{#link-to 'appointments.create' 1500}}<li class="app-time">3:00pm</li>{{/link-to}}
+          {{#link-to 'appointments.create' 1600}}<li class="app-time">4:00pm</li>{{/link-to}}
+          {{#link-to 'appointments.create' 1700}}<li class="app-time">5:00pm</li>{{/link-to}}
+        </ul>
+
+      {{/each}}
+    </p>
   </div>
-  <div class="week-container">
+  <!-- <div class="week-container">
     <div class="day-container sunday">
       <h2 class="day-title">Sunday</h2>
     </div>
@@ -26,7 +42,7 @@
     <div class="day-container saturday">
       <h2 class="day-title">Saturday</h2>
     </div>
-  </div>
+  </div> -->
 </div>
 
 {{outlet}}

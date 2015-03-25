@@ -9,7 +9,7 @@ export default Ember.Controller.extend({
       user.save().then(function() {
         self.get('session').authenticate('authenticator:parse-email', user);
       });
-      this.transitionToRoute('appointment');
+      this.transitionToRoute('calendar');
     }
   }
 });

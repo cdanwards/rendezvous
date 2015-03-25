@@ -36,6 +36,22 @@ $black-text: $text-black;
   }
 }
 
+/* New View */
+
+.new-form {
+  width: 50%;
+  margin: 0 auto;
+  input {
+    display: block;
+    width: 200px;
+    height: 50px;
+  }
+  button:{
+    width: 200px;
+    height: 20px;
+  }
+}
+
 /* Calendar View */
 
 .calendar-container {
@@ -66,8 +82,8 @@ $black-text: $text-black;
 
 /* Day View */
 
-.day-container {
-  max-width: 40%;
+.calendar-container {
+  width: 80%;
   max-height: 70%;
   background-color: $secondary-color;
   margin: 0 auto;
@@ -78,16 +94,20 @@ $black-text: $text-black;
   .appointment-header {
     text-align: center;
   }
-
-  .list-container {
-    .apps-container {
-      list-style: none;
-      padding: 10px 0;
-    }
-    .app-time {
-      padding: 5px;
-      text-align: center;
-      border: 1px white solid;
+  .week-header{
+    display: inline-block;
+    list-style: none;
+    .list-container {
+      .apps-container {
+        list-style: none;
+        padding: 10px 0;
+      }
+      .app-time {
+        list-style: none;
+        padding: 5px;
+        text-align: center;
+        border: 1px white solid;
+      }
     }
   }
   .date-footer {

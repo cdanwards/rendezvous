@@ -1,7 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model: function(params) { console.log(params.time);},
+  model: function(params) {
+    return Ember.$.getJSON('/appointments/'+params.time_id);
+  },
 
   actions: {
     save: function(){
