@@ -25,10 +25,10 @@ module.exports = function(environment) {
     contentSecurityPolicy: {
       'default-src': "'none'",
       'script-src': "'self' fonts.googleapis.com",
-      'font-src': "'self'",
+      'font-src': "'self' *",
       'connect-src': "'self' https://api.parse.com",
       'img-src': "'self'",
-      'style-src': "'self' 'unsafe-inline'",
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
       'media-src': "'self'",
       'report-uri': "'self'"
     },

@@ -20,7 +20,7 @@ export default Ember.ArrayController.extend({
       return {
         display: date.toString(),
         slug: dateSlug(date)
-      }
+      };
     });
   }.property('dateRange')
 });
