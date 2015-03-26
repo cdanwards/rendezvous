@@ -16,10 +16,15 @@ export default Ember.ArrayController.extend({
 
   displayDates: function() {
     var dates = this.get('dateRange');
-    return dates.map(function(date){
+    var options = {
+    weekday: "long", year: "numeric", month: "short",
+    day: "numeric", hour: "2-digit", minute: "2-digit"
+    };
+    return dates.map(function(param){
+      var date = param.toLocaleTimeString("en-us", options);
       return {
-        display: date.toString(),
-        slug: dateSlug(date)
+        display: date.substring(0, date.length - 9),
+        slug: dateSlug(param)
       };
     });
   }.property('dateRange')

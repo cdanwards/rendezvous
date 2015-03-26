@@ -1,20 +1,15 @@
 {{outlet}}
-
-<form {{action 'register' on="submit"}}>
-  <fieldset>
-
+<div class="register-container">
+  <form {{action 'register' on="submit"}}>
     <div class="new-form">
       <h1 class="register-header">Register</h1>
-
       {{input type="text" name="email" placeholder="Email Address" value=model.email required=true}}
       {{input type="password" name="password" placeholder="Choose Password" value=model.password required=true}}
       {{input type="text" name="firstName" placeholder="First Name" value=model.firstName required=true}}
       {{input type="text" name="lastName" placeholder="Last Name" value=model.lastName required=true}}
-
-
-    <div class="new-button">
-      <button class="new-button" {{action "save"}}>Submit</button>
+      <div class="new-button">
+        <button class="new-button" {{action "save"}}>Submit</button>
+      </div>
     </div>
-  </div>
-  </fieldset>
-</form>
+  </form>
+</div>

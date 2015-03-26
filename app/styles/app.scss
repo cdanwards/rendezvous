@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
 
 * {
   margin: 0;
@@ -7,6 +7,12 @@
   font-color: #C3BABA;
 }
 
+body {
+  background-image: url("https://download.unsplash.com/photo-1421757295538-9c80958e75b0");
+  background-position: center;
+  background-size: cover;
+  opacity: 50;
+}
 
 /* Color Vairables */
 
@@ -31,13 +37,17 @@ $black-text: $text-black;
   .main-header {
     text-align: center;
     color: white;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    font-weight: 300;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: 100;
+    font-size: 45px;
   }
 }
 
 /* New View */
+.register-container {
+  padding: 90px;
+}
 
 .new-form {
   position: relative;
@@ -110,79 +120,56 @@ $black-text: $text-black;
   position: relative;
   padding: 20px;
   background-color: #f5f5f5;
-  max-width: 25%;
+  max-width: 90%;
   max-height: 40%;
   margin: 0 auto;
   margin-top: 30px;
   border: 1px solid #dfdfdf;
   border-radius: 5px;
+  .date-container {
+    font-size: 14px;
+  }
   .week-header {
-    max-width: 90%;
+    max-width: 12%;
     max-height: 10%;
+    display: inline-block;
     .week-header-title {
       text-align: center;
       padding: 5px;
-      display: inline-block;
+
     }
   }
-  .week-container {
-
-    .day-container {
-      a:link {
-        color: none;
-      }
-      a:visited {
-        color: none;
-      }
-      display: inline-block;
-      width: 10%;
-      margin: 0 auto;
-      margin-left: 5px;
+  .apps-container {
+    margin: 0 auto;
+    list-style: none;
+    a {
+      color: $text-black;
+      text-decoration: none;
     }
+  }
+  .app-time {
+    text-align: center;
+    border: 1px solid #dfdfdf;
+    border-radius: 5px;
+    padding: 7px;
+    margin: 10px;
+    background-color: #ccc;
   }
 }
 
 
-/* Day View */
-
-/* .calendar-container {
-  width: 80%;
-  max-height: 70%;
-  background-color: $secondary-color;
+.calendar-day {
+  display: inline-block;
+  width: 14%;
   margin: 0 auto;
-  margin-top: 30px;
-  list-style: none;
-  padding: 20px;
+}
 
-  .appointment-header {
-    text-align: center;
-  }
-  .week-header{
-    display: inline-block;
-    list-style: none;
-    .list-container {
-      .apps-container {
-        list-style: none;
-        padding: 10px 0;
-      }
-      .app-time {
-        list-style: none;
-        padding: 5px;
-        text-align: center;
-        border: 1px white solid;
-      }
-    }
-  }
-  .date-footer {
-    text-align: center;
-  }
-} */
 
-/* Form View */
+/* Create View */
 
 .form-container {
   position: relative;
-  padding: 20px;
+  padding: 40px 20px;
   background-color: #f5f5f5;
   max-width: 50%;
   max-height: 40%;
@@ -190,6 +177,7 @@ $black-text: $text-black;
   margin-top: 30px;
   border: 1px solid #dfdfdf;
   border-radius: 5px;
+  margin-top: 80px;
   .paragraph-field {
     position: relative;
     ul {
@@ -202,6 +190,7 @@ $black-text: $text-black;
       width: 250px;
       /* padding-bottom: 10px; */
       font-weight: lighter;
+
     }
   }
   .input-title {
@@ -211,6 +200,8 @@ $black-text: $text-black;
     padding-right: 10px;
     font-weight: lighter;
     height: 30px;
+    font-size: 15px;
+    margin-left: 37px;
   }
   .input-field {
     input {
@@ -222,16 +213,31 @@ $black-text: $text-black;
       font-size: 12px;
       font-weight: lighter;
       border-radius: 3px;
+      font-size: 15px;
     }
     display: inline-block;
     right: 0;
-    padding-right: 10px
+    padding-right: 10px;
   }
   margin: 0 auto;
   margin-top: 30px;
-  .form-button {
-    margin: 0 auto;
-    padding: 3px;
+  .create-button {
+    text-align: center;
+    button {
+      margin: 0 auto;
+      padding-bottom: none;
+      width: 50%;
+      text-align: center;
+      font-size: 22px;
+      font-weight: 300;
+      height: 40px;
+      margin-top: 10px;
+      background-color: $primary-color;
+      color: white;
+      font-weight: lighter;
+      border: 2px solid $primary-color;
+      border-radius: 5px;
+    }
   }
 }
 
@@ -252,8 +258,8 @@ $black-text: $text-black;
     color: #202020;
   }
   .index-link {
-    margin: 0 auto;
-    margin-top: 20px;
+    margin: 20px auto;
+    margin-top: 30px;
     border: 2px solid $primary-color;
     border-radius: 5px;
     width: 50%;
@@ -266,7 +272,7 @@ $black-text: $text-black;
   }
   .thanks-banner {
     text-align: center;
-    padding-top: 80px;
+    padding-top: 30px;
     font-weight: 300;
     color: $black-text;
   }
@@ -286,5 +292,36 @@ $black-text: $text-black;
     height: 20%;
     margin: 0 auto;
     padding-top: 20px;
+  }
+}
+
+/* User View */
+
+.user-container {
+  position: relative;
+  padding: 20px;
+  background-color: #f5f5f5;
+  max-width: 25%;
+  max-height: 40%;
+  margin: 0 auto;
+  margin-top: 30px;
+  border: 1px solid #dfdfdf;
+  border-radius: 5px;
+  .user-info, .appointment-info {
+    border: 1.5px solid #dfdfdf;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  .index-info {
+    margin: 0 auto;
+    width: 60%;
+  }
+  .index-headline, .appointment-headline {
+    h2 {
+      font-weight: 100;
+    }
+  }
+  .user-list {
+    list-style: none;
   }
 }

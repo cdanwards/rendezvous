@@ -1,25 +1,32 @@
 {{outlet}}
+<div class="user-container">
 
-{{#link-to 'edit'}}<div class="prof-edit-button">Edit</div>{{/link-to}}
-<div class="index-info">
+  <div class="index-info">
+    <div class="user-info">
+      <div class="index-headline">
+        <h2>Contact Info</h2>
+      </div>
+      <ul class="user-list">
+        <li class="user-list-item">First Name: {{session.currentUser.firstName}}</li>
+        <li class="user-list-item">Last Name: {{session.currentUser.lastName}}</li>
+        <li class="user-list-item">Email: {{session.currentUser.email}}</li>
+      </ul>
+      {{#link-to 'edit'}}<div class="prof-edit-button">Edit Contact Info</div>{{/link-to}}
+    </div>
+    <div class="appointment-info">
+      <div class="appointment-headline">
+        <h2>Appointments</h2>
+      </div>
 
-  <div class="index-headline">
-  <h2>Contact Info</h2>
+      <ul>
+        {{log model}}
+        {{#each appointment in model}}
+
+          <li>{{appointment.firstName}} {{appointment.lastName}} <br> {{appointment.email}} <br> {{appointment.reason}}</li>
+          <a class="change-buttons" {{action 'destroy' appointment}}>{{fa-icon "fa-trash-o"}}</a>
+        {{/each}}
+
+      </ul>
+    </div>
   </div>
-
-<ul>
-  <li>{{session.currentUser.firstName}}</li>
-  <li>{{session.currentUser.lastName}}</li>
-  <li>{{session.currentUser.email}}</li>
-</ul>
-
-<div class="appointment-headline">
-<h2>Appointments</h2>
-</div>
-
-<ul>
-{{#each appointment in model}}
-  <li>{{appointment.firstName}}{{appointment.lastName}}{{appointment.email}}{{appointment.reason}}</li>
-{{/each}}
-</ul>
 </div>

@@ -1,12 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  model: {},
-
   actions: {
     save: function() {
-      this.store.save('appointment', this.get('model'));
-      // console.log(this.store.get(session.currentUser.lastName));
+      this.get('model').save().then(function(){
+        this.transitionToRoute('appointments.thanks');
+      }.bind(this));
     }
   }
 });

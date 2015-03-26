@@ -5,9 +5,9 @@ export default Model.extend({
     var data = this._super();
     var creatorId = this.get('createdBy.id');
     if(creatorId) {
-      data.set(data, 'createdBy', {
+      data.set('createdBy', {
         __type: 'Pointer',
-        className: '__User',
+        className: '_User',
         objectId: creatorId
       });
     }

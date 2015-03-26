@@ -1,18 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  // model: 
-  // // function() {
-  // //   return this.store.createRecord('appointment', {
-  // //     createdBy: this.get('session.currentUser')
-  // //   });
-  // },
-
-  actions: {
-    save: function(){
-      this.modelFor('new').save().then(function() {
-        this.transitionTo('appointments');
-      }.bind(this));
-    }
-  }
+  model: function(params) {
+    return this.store.createRecord('appointment', {
+      date: params.date,
+      time: params.time,
+      createdBy: this.get('session.currentUser')
+    });
+  },
 });

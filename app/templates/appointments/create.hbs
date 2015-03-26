@@ -10,10 +10,9 @@
         <li class="form-description"><span class="input-title">Reason For Appointment:</span><div class="input-field">{{input type="text" placeholder="Reason for appointment" value=model.reason}}</div></li>
       </ul>
     </div>
-
-    {{#link-to 'appointments.thanks'}}
-    <button class="form-button" {{action "save"}}>Schedule Appointment</button>
-    {{/link-to}}
+    <div  class="create-button">
+      <button {{action "save"}}>Schedule Appointment</button>
+    </div>
 
   </form>
 
