@@ -1,7 +1,6 @@
 <div class="login-container">
   <h1 class="login-header">LOGIN</h1>
   <form class="form-horizontal col-lg-6 col-lg-offset-3" {{action 'authenticate' on='submit'}}>
-    <fieldset>
       <div class="form-group">
         <label for="identification" class="control-label">Email</label>
         <div>
@@ -16,10 +15,9 @@
         </div>
       </div>
 
-      <button type="submit" class="btn btn-primary">Login {{link-to 'calendar' 'calendar'}}</button>
+      <button type="submit" class="btn btn-primary">Login {{link-to 'calendar'}}</button>
       <p class="create-account">
         {{#link-to 'new'}}Don't have an account?{{/link-to}}
       </p>
-    </fieldset>
   </form>
 </div>

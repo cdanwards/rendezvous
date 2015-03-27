@@ -23,7 +23,7 @@ export default Ember.ArrayController.extend({
     return dates.map(function(param){
       var date = param.toLocaleTimeString("en-us", options);
       return {
-        display: date.substring(0, date.length - 9),
+        display: date.substring(0, date.length - 10),
         slug: dateSlug(param)
       };
     });

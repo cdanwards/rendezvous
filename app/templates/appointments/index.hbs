@@ -4,7 +4,7 @@
   <div class="index-info">
     <div class="user-info">
       <div class="index-headline">
-        <h2>Contact Info</h2>
+        <h2>My Contact Info</h2>
       </div>
       <ul class="user-list">
         <li class="user-list-item">First Name: {{session.currentUser.firstName}}</li>
@@ -15,18 +15,21 @@
     </div>
     <div class="appointment-info">
       <div class="appointment-headline">
-        <h2>Appointments</h2>
+        <h2>My Appointments</h2>
       </div>
 
       <ul>
         {{log model}}
         {{#each appointment in model}}
 
-          <li>{{appointment.firstName}} {{appointment.lastName}} <br> {{appointment.email}} <br> {{appointment.reason}}</li>
-          <a class="change-buttons" {{action 'destroy' appointment}}>{{fa-icon "fa-trash-o"}}</a>
+          <li><a class="change-buttons" {{action 'destroy' appointment}}>{{fa-icon "fa-trash-o"}}</a>  For {{appointment.firstName}} {{appointment.lastName}} ({{appointment.email}}) in regards to {{appointment.reason}} at {{appointment.time}} on {{appointment.date}}</li>
+
         {{/each}}
 
       </ul>
+    </div>
+    <div class="return-calendar">
+      {{#link-to 'calendar'}}<h3 class="calendar-link">Schedule another appointment</h3>{{/link-to}}
     </div>
   </div>
 </div>

@@ -1,18 +1,18 @@
 {{outlet}}
+<div class="edit-container">
+  <h2 class="edit-header">Edit Your Contact Info</h2>
+  <form {{action 'saveIndex' on="submit"}}>
 
-<form {{action 'saveIndex' on="submit"}}>
-  <fieldset>
+      <div class="edit-form">
 
-    <div class="reg-form">
-
-      {{input type="text" name="email" placeholder="Email Address" value=session.currentUser.email required=true}}
-      {{input type="text" name="firstName" placeholder="First Name" value=session.currentUser.firstName required=true}}
-      {{input type="text" name="lastName" placeholder="Last Name" value=session.currentUser.lastName required=true}}
+        {{input type="text" name="email" placeholder="Email Address" value=session.currentUser.email required=true}}
+        {{input type="text" name="firstName" placeholder="First Name" value=session.currentUser.firstName required=true}}
+        {{input type="text" name="lastName" placeholder="Last Name" value=session.currentUser.lastName required=true}}
 
 
-    <div class="reg-button">
-      <button class="reg-button">Submit</button>
+      <div class="edit-button-container">
+        <button class="edit-button">Submit</button>
+      </div>
     </div>
-  </div>
-  </fieldset>
-</form>
+  </form>
+</div>

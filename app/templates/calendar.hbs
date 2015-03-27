@@ -1,12 +1,13 @@
 
 
 <div class="calendar-container">
+  <h1 class="calendar-header">Select an Appointment Time</h1>
       {{#each date in displayDates}}
         <div class="calendar-day">
           <p class="date-container">{{date.display}}</p>
           <ul class="apps-container">
             {{#link-to 'appointments.create' date.slug "9:00 AM"}}<li class="app-time">9:00am</li>{{/link-to}}
-            {{#link-to 'appointments.create' date.slug "10::00 AM"}}<li class="app-time">10:00am</li>{{/link-to}}
+            {{#link-to 'appointments.create' date.slug "10:00 AM"}}<li class="app-time">10:00am</li>{{/link-to}}
             {{#link-to 'appointments.create' date.slug "11:00 AM"}}<li class="app-time">11:00am</li>{{/link-to}}
             {{#link-to 'appointments.create' date.slug "12:00 PM"}}<li class="app-time">12:00pm</li>{{/link-to}}
             {{#link-to 'appointments.create' date.slug "1:00 PM"}}<li class="app-time">1:00pm</li>{{/link-to}}
